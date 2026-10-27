@@ -1,0 +1,292 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vitrina de Cartas Coleccionables de Deportes · Colección Privada Chile</title>
+<style>
+:root{--bg:#0a0f18;--card:#131c2b;--card2:#1b273b;--accent:#10b981;--gold:#f59e0b;--blue:#38bdf8;--txt:#f1f5f9;--mut:#94a3b8;--brd:#26354d}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:radial-gradient(circle at top,#16263f,var(--bg) 62%);color:var(--txt);min-height:100vh}
+header{text-align:center;padding:38px 16px 22px;border-bottom:1px solid #1e293b;background:linear-gradient(180deg,#0f172acc,transparent)}
+h1{margin:0;font-family:Georgia,serif;font-size:clamp(1.85rem,5.2vw,3rem);color:var(--gold);letter-spacing:1.2px;text-shadow:0 2px 14px #000a}
+.sub{color:var(--mut);margin-top:8px;font-size:.98rem;max-width:780px;margin-left:auto;margin-right:auto}
+.brands-ribbon{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:14px auto 0;max-width:960px}
+.b-pill{background:#182336;border:1px solid var(--brd);color:#cbd5e1;font-size:.78rem;padding:4px 12px;border-radius:20px;letter-spacing:.3px}
+.stats{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:20px auto;max-width:1100px}
+.stat{background:var(--card);border:1px solid var(--brd);border-radius:14px;padding:11px 18px;min-width:135px;box-shadow:0 6px 18px #0006}
+.stat b{display:block;font-size:1.35rem;color:var(--gold)}
+.stat.st-green b{color:var(--accent)}
+.controls{max-width:1240px;margin:0 auto;display:flex;flex-wrap:wrap;gap:9px;justify-content:center;align-items:center;padding:0 12px}
+.search-wrap{display:flex;align-items:center;gap:6px;width:min(440px,94vw);background:#0d1420;border:2px solid #334766;border-radius:30px;padding:4px 6px 4px 16px}
+.search-wrap:focus-within{border-color:var(--gold);box-shadow:0 0 0 3px #f59e0b33}
+#q{flex:1;min-width:0;border:0;background:transparent;color:#fff!important;-webkit-text-fill-color:#fff!important;caret-color:var(--gold);font-size:15px;padding:8px 0;outline:none}
+#q::placeholder{color:var(--mut);-webkit-text-fill-color:var(--mut)}
+.btn-s{background:var(--gold);color:#0a0f18;border:0;border-radius:22px;padding:8px 14px;font-weight:700;font-size:.88rem;cursor:pointer}
+.btn-c{background:#26354d;color:#fff;border:0;border-radius:50%;width:28px;height:28px;font-size:.85rem;cursor:pointer;display:none;align-items:center;justify-content:center}
+select.flt{padding:9px 13px;border-radius:22px;border:1px solid var(--brd);background:#0d1420;color:var(--txt);font-size:14.5px;cursor:pointer;max-width:92vw}
+select.flt:focus{outline:none;border-color:var(--gold)}
+.count-bar{margin-top:12px;color:var(--mut);font-size:.88rem}
+main{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:22px;padding:24px;max-width:1280px;margin:auto}
+.c{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--brd);border-radius:18px;overflow:hidden;cursor:pointer;transition:.22s;box-shadow:0 8px 24px #0007;display:flex;flex-direction:column}
+.c:hover{transform:translateY(-5px);border-color:var(--gold)}
+.c .ph{aspect-ratio:3/4;background:radial-gradient(circle,#1e293b,#090d14);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.c .ph img{width:100%;height:100%;object-fit:contain;padding:6px;transition:transform .25s}
+.c:hover .ph img{transform:scale(1.03)}
+.tag{position:absolute;top:10px;left:10px;background:#000d;color:var(--gold);padding:3px 10px;border-radius:20px;font-size:.76rem;font-weight:700;border:1px solid #f59e0b55}
+.yr-tag{position:absolute;top:10px;right:10px;background:#000d;color:#fff;padding:3px 9px;border-radius:20px;font-size:.75rem;font-weight:600}
+.sp-tag{position:absolute;bottom:8px;left:10px;background:var(--gold);color:#090d14;padding:3px 9px;border-radius:12px;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.3px}
+.ph-cnt{position:absolute;bottom:8px;right:10px;background:#000d;color:#e2e8f0;padding:2px 8px;border-radius:12px;font-size:.72rem}
+.c .bd{padding:14px 15px 16px;display:flex;flex-direction:column;flex:1}
+.badges-row{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:7px}
+.b-rar{background:#10b98122;color:#34d399;border:1px solid #10b98155;font-size:.72rem;padding:2px 8px;border-radius:10px;font-weight:600}
+.b-era{background:#38bdf81c;color:#7dd3fc;border:1px solid #38bdf844;font-size:.72rem;padding:2px 8px;border-radius:10px}
+.b-num{background:#f59e0b22;color:#fcd34d;border:1px solid #f59e0b44;font-size:.72rem;padding:2px 7px;border-radius:10px;font-weight:600}
+.c h3{margin:0 0 4px;font-size:1.06rem;line-height:1.28;color:#fff}
+.c .sub-t{color:#cbd5e1;font-size:.84rem;margin:0 0 6px;font-weight:500}
+.c p{margin:2.5px 0;color:var(--mut);font-size:.83rem}
+.price-box{margin-top:auto;padding-top:10px;border-top:1px solid #26354d88;display:flex;flex-direction:column;gap:2px}
+.v-mkt{color:var(--gold);font-weight:700;font-size:.95rem}
+.v-cl{color:var(--accent);font-weight:600;font-size:.84rem}
+.empty-box{grid-column:1/-1;text-align:center;background:var(--card);border:1px dashed var(--brd);border-radius:18px;padding:52px 22px;color:var(--mut)}
+.empty-box h3{color:var(--gold);margin:0 0 10px;font-size:1.35rem}
+.empty-box p{max-width:620px;margin:6px auto;line-height:1.5}
+#m{position:fixed;inset:0;background:#000e;display:none;align-items:center;justify-content:center;padding:16px;z-index:99}
+#m .box{background:var(--card);border:1px solid var(--gold);border-radius:18px;max-width:960px;width:100%;max-height:92vh;overflow:auto;display:grid;grid-template-columns:1.05fr .95fr}
+#mi{background:#090d14;padding:14px;display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center}
+#mi img{width:100%;max-height:520px;object-fit:contain;display:block;border-radius:10px;border:1px solid var(--brd);cursor:zoom-in}
+#m .inf{padding:22px}
+#m h2{margin-top:0;color:var(--gold);font-family:Georgia,serif;font-size:1.38rem;line-height:1.3}
+#m dt{color:var(--mut);font-size:.74rem;text-transform:uppercase;margin-top:10px;letter-spacing:.5px}
+#m dd{margin:2px 0 0;font-size:.94rem;color:#f8fafc}
+.x{float:right;background:none;border:0;color:var(--txt);font-size:1.8rem;cursor:pointer;line-height:1}
+#lb{position:fixed;inset:0;background:#000f;display:none;align-items:center;justify-content:center;z-index:120;cursor:zoom-out;padding:12px}
+#lb img{max-width:96vw;max-height:95vh;object-fit:contain;border-radius:8px}
+@media(max-width:740px){#m .box{grid-template-columns:1fr}}
+footer{text-align:center;color:var(--mut);font-size:.8rem;padding:30px 16px;border-top:1px solid #1e293b}
+</style></head><body>
+<header>
+  <h1>🏆 Vitrina de Cartas Coleccionables de Deportes</h1>
+  <div class="sub">Colección Privada Chile · Catálogo histórico con año, época, rareza, condición y tasación (USD / CLP)</div>
+  <div class="brands-ribbon">
+    <span class="b-pill">🏀 Básquetbol (NBA)</span>
+    <span class="b-pill">⚽ Fútbol Mundial y Chileno</span>
+    <span class="b-pill">⚾ Béisbol (MLB)</span>
+    <span class="b-pill">🏈 Fútbol Americano (NFL)</span>
+    <span class="b-pill">🏎️ Fórmula 1 / Motor</span>
+    <span class="b-pill">🎾 Tenis</span>
+    <span class="b-pill">🥊 UFC / Wrestling</span>
+    <span class="b-pill">Upper Deck · Panini Prizm · Topps · Fleer · SkyBox · Salo</span>
+  </div>
+  <div class="stats">
+    <div class="stat"><b id="nCartas">0</b>cartas catalogadas</div>
+    <div class="stat"><b id="nUnidades">0</b>unidades físicas</div>
+    <div class="stat"><b id="nDeportes">0</b>deportes</div>
+    <div class="stat"><b>$0</b>valor mercado (CLP)</div>
+    <div class="stat st-green"><b>$0</b>venta sugerida Chile (CLP)</div>
+  </div>
+  <div class="controls">
+    <form class="search-wrap" onsubmit="event.preventDefault();r();document.getElementById('q').blur();">
+      <input type="text" inputmode="search" enterkeyhint="search" autocomplete="off" autocorrect="off" spellcheck="false" id="q" placeholder="Buscar jugador, equipo, marca, set, año, rareza…">
+      <button type="button" class="btn-c" id="btnClr" onclick="limpiar()" title="Limpiar búsqueda">✕</button>
+      <button type="submit" class="btn-s">Buscar</button>
+    </form>
+    <select id="fSport" class="flt" title="Filtrar por deporte">
+      <option value="all">🏅 Todos los deportes</option>
+      <option value="basketball">🏀 Básquetbol (NBA)</option>
+      <option value="soccer">⚽ Fútbol</option>
+      <option value="baseball">⚾ Béisbol (MLB)</option>
+      <option value="nfl">🏈 Fútbol Americano (NFL)</option>
+      <option value="motor">🏎️ Fórmula 1 / Motor</option>
+      <option value="tennis">🎾 Tenis</option>
+      <option value="combat">🥊 Wrestling / UFC / Boxeo</option>
+      <option value="hockey">🏒 Hockey (NHL)</option>
+      <option value="other">✨ Otros Deportes</option>
+    </select>
+    <select id="fEra" class="flt" title="Filtrar por época coleccionable">
+      <option value="all">🕰️ Todas las épocas</option>
+      <option value="vintage_pre80">📜 Vintage (Pre-1980)</option>
+      <option value="1980s">📼 Años 80 (1980–1989)</option>
+      <option value="1990s">🔥 Junk Wax / Años 90 (1990–1999)</option>
+      <option value="2000s">💿 Años 2000 (2000–2009)</option>
+      <option value="2010s_plus">💎 Era Moderna / Prizm (2010–Presente)</option>
+    </select>
+    <select id="fYear" class="flt" title="Filtrar por año específico">
+      <option value="all">📅 Todos los años</option>
+    </select>
+    <select id="fRarity" class="flt" title="Filtrar por rareza o tipo de carta">
+      <option value="all">🌟 Todas las rarezas</option>
+      <option value="rookie">👑 Rookie Card (RC)</option>
+      <option value="auto_memo">✍️ Autógrafo / Memorabilia (Patch/Jersey)</option>
+      <option value="numbered">🔢 Numerada / Serializada</option>
+      <option value="refractor_holo">✨ Refractor / Prizm / Holo / Chrome</option>
+      <option value="insert">🎯 Insert / Especial</option>
+      <option value="sticker">📒 Sticker / Lámina Histórica</option>
+      <option value="base">🃏 Base / Común</option>
+    </select>
+    <select id="fBrand" class="flt" title="Filtrar por fabricante / marca / set">
+      <option value="all">🏷️ Todas las marcas / sets</option>
+      <option value="upper_deck">Upper Deck</option>
+      <option value="panini">Panini / Prizm / Donruss / Select</option>
+      <option value="topps">Topps / Chrome / Bowman / Merlin</option>
+      <option value="fleer_skybox">Fleer / SkyBox / NBA Hoops / Ultra</option>
+      <option value="salo">Salo / Álbumes y Ediciones Clásicas</option>
+      <option value="classic_other">Futera / Mundicromo / Score / Pro Set</option>
+      <option value="other">Otras Marcas</option>
+    </select>
+    <select id="fSort" class="flt" title="Ordenar catálogo">
+      <option value="price_desc" selected>⬆️ Precio: Mayor a menor</option>
+      <option value="price_asc">⬇️ Precio: Menor a mayor</option>
+      <option value="id_desc">🆕 Más recientes primero (SPORT-XXX)</option>
+      <option value="year_asc">⏳ Año: Más antiguos primero</option>
+      <option value="year_desc">📅 Año: Más nuevos primero</option>
+      <option value="player_asc">🔤 Jugador (A–Z)</option>
+      <option value="id_asc">🔢 Código: SPORT-001 al final</option>
+    </select>
+  </div>
+  <div class="count-bar" id="cnt"></div>
+</header>
+<main id="g"></main>
+<div id="m" onclick="if(event.target==this)cerrar()"><div class="box"><div id="mi"></div><div class="inf"><button class="x" onclick="cerrar()">×</button><div id="md"></div></div></div></div>
+<div id="lb" onclick="this.style.display='none'"><img id="lbi" src=""></div>
+<footer>Valores referenciales basados en ventas reales internacionales (eBay / 130point / COMC / PSA) y mercado chileno de coleccionismo deportivo. Actualizado 2026-10-27.</footer>
+<script>
+const D=[];
+const e=s=>String(s??'—').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const norm=s=>String(s??'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+const F=[
+  ['id','Código de Inventario'],
+  ['jugador','Jugador / Protagonista'],
+  ['titulo','Título / Descripción'],
+  ['deporte','Deporte / Liga'],
+  ['equipo','Equipo / Selección'],
+  ['marca_set','Marca / Set / Colección'],
+  ['numero','Número de Carta'],
+  ['anio','Año de Lanzamiento'],
+  ['epoca','Época Coleccionable'],
+  ['rareza','Rareza / Tipo de Carta'],
+  ['estado','Estado de Conservación'],
+  ['material','Material / Acabado'],
+  ['idioma','Idioma'],
+  ['fabricacion','País de Fabricación'],
+  ['autenticidad','Autenticidad / Licencias'],
+  ['valor_usd','Valor Mercado Internacional (USD)'],
+  ['valor_clp','Valor Mercado Estimado (CLP)'],
+  ['venta_chile_clp','Precio Venta Sugerido en Chile (CLP)'],
+  ['precio_original','Precio Original de Época'],
+  ['stock','Stock Disponible (Unidades)'],
+  ['notas','Reseña Histórica y Detalles'],
+  ['fecha','Fecha de Registro']
+];
+
+// Poblar selector dinámico de años disponibles en el inventario
+(function initYears(){
+  const sel=document.getElementById('fYear');
+  const yrs=Array.from(new Set(D.map(p=>String(p.anio||'').trim()).filter(Boolean))).sort();
+  yrs.forEach(y=>{
+    const o=document.createElement('option');
+    o.value=y;
+    o.textContent='📅 Año '+y;
+    sel.appendChild(o);
+  });
+})();
+
+function limpiar(){
+  const qEl=document.getElementById('q');
+  qEl.value='';
+  r();
+  qEl.focus();
+}
+function zoomImg(src){
+  const lb=document.getElementById('lb');
+  document.getElementById('lbi').src=src;
+  lb.style.display='flex';
+}
+function r(){
+  const rawQ=document.getElementById('q').value||'';
+  document.getElementById('btnClr').style.display=rawQ.length?'inline-flex':'none';
+  const q=norm(rawQ.trim());
+  const fsp=document.getElementById('fSport').value;
+  const fer=document.getElementById('fEra').value;
+  const fyr=document.getElementById('fYear').value;
+  const frr=document.getElementById('fRarity').value;
+  const fbr=document.getElementById('fBrand').value;
+  const fs=document.getElementById('fSort').value;
+
+  let L=D.filter(p=>{
+    if(q && !norm(JSON.stringify(p)).includes(q)) return false;
+    if(fsp!=='all' && p.sport_key!==fsp) return false;
+    if(fer!=='all' && p.era_key!==fer) return false;
+    if(fyr!=='all' && String(p.anio)!==fyr) return false;
+    if(frr!=='all' && p.rarity_key!==frr) return false;
+    if(fbr!=='all' && p.brand_key!==fbr) return false;
+    return true;
+  });
+
+  L.sort((a,b)=>{
+    if(fs==='price_desc') return (b.pmax-a.pmax)||(b.pmin-a.pmin)||(b.cmax-a.cmax)||a.id.localeCompare(b.id);
+    if(fs==='price_asc') return (a.pmin-b.pmin)||(a.pmax-b.pmax)||(a.cmax-b.cmax)||a.id.localeCompare(b.id);
+    if(fs==='id_desc') return b.id.localeCompare(a.id);
+    if(fs==='id_asc') return a.id.localeCompare(b.id);
+    if(fs==='year_asc') return (a.ymin-b.ymin)||(a.ymax-b.ymax)||(b.pmax-a.pmax);
+    if(fs==='year_desc') return (b.ymax-a.ymax)||(b.ymin-a.ymin)||(b.pmax-a.pmax);
+    if(fs==='player_asc') return String(a.jugador||'').localeCompare(String(b.jugador||''),'es');
+    return a.id.localeCompare(b.id);
+  });
+
+  document.getElementById('nCartas').textContent=D.length;
+  document.getElementById('nUnidades').textContent=D.reduce((s,p)=>s+(+p.stock||1),0);
+  document.getElementById('nDeportes').textContent=new Set(D.map(p=>p.deporte).filter(Boolean)).size;
+  const shownUnits=L.reduce((s,p)=>s+(+p.stock||1),0);
+  document.getElementById('cnt').textContent=D.length
+    ? `Mostrando ${L.length} carta(s) (${shownUnits} unidades físicas)`
+    : '🏆 Vitrina activa y lista para recibir las primeras cartas coleccionables de deportes (NBA · Fútbol · MLB · NFL · Tenis · F1)';
+
+  if(!D.length){
+    document.getElementById('g').innerHTML='<div class="empty-box"><h3>🏆 Vitrina lista para recibir tus cartas coleccionables de deportes</h3><p>Envía las fotos de tus cartas deportivas (frente y reverso) para catalogarlas automáticamente con su <b>jugador, deporte, marca/set, número, año, época, rareza, estado de conservación y tasación en USD y CLP</b>.</p><p style="font-size:.84rem;color:#64748b">Soporta NBA · Fútbol Mundial y Chileno · MLB · NFL · Fórmula 1 · Tenis · UFC / Wrestling (Upper Deck, Panini Prizm, Topps, Fleer, SkyBox, Salo y más).</p></div>';
+    return;
+  }
+
+  document.getElementById('g').innerHTML=L.map(p=>`<div class="c" onclick="ver('${p.id}')">
+    <div class="ph">
+      ${p.imgs[0]?`<img loading="lazy" src="${p.imgs[0]}" alt="${e(p.jugador)}">`:''}
+      <span class="tag">${e(p.id)}${(p.stock||1)>1?" · Stock: "+p.stock+" u.":""}</span>
+      <span class="yr-tag">📅 ${e(p.anio)}</span>
+      <span class="sp-tag">${e(p.deporte)}</span>
+      ${p.imgs.length>1?`<span class="ph-cnt">📸 ${p.imgs.length} fotos</span>`:''}
+    </div>
+    <div class="bd">
+      <div class="badges-row">
+        <span class="b-rar">✨ ${e(p.rareza)}</span>
+        <span class="b-era">🕰️ ${e(p.epoca)}</span>
+        ${p.numero?`<span class="b-num">${e(p.numero)}</span>`:''}
+      </div>
+      <h3>${e(p.jugador)}</h3>
+      ${p.titulo && p.titulo!==p.jugador?`<div class="sub-t">${e(p.titulo)}</div>`:''}
+      <p>🏷️ <b>${e(p.marca_set)}</b>${p.numero?' · '+e(p.numero):''}</p>
+      ${p.equipo?`<p>🛡️ ${e(p.equipo)}</p>`:''}
+      <p>⭐ ${e(p.estado)}</p>
+      <div class="price-box">
+        <div class="v-mkt">💵 Mercado: $${e(p.valor_clp_fmt)} CLP ${p.valor_usd?`<span style="font-weight:400;color:var(--mut);font-size:.8rem">(US$ ${e(p.valor_usd)})</span>`:''}</div>
+        <div class="v-cl">🇨🇱 Venta Chile: $${e(p.venta_chile_fmt)} CLP</div>
+      </div>
+    </div>
+  </div>`).join('')||'<div class="empty-box"><h3>Sin resultados para ese filtro</h3><p>Prueba cambiando el deporte, época, año, rareza, marca o término de búsqueda.</p></div>';
+}
+function ver(id){
+  const p=D.find(x=>x.id==id);
+  if(!p)return;
+  document.getElementById('mi').innerHTML=p.imgs.map((s,idx)=>`<img src="${s}" title="Clic para ampliar a pantalla completa" onclick="zoomImg('${s}')"><div style="font-size:.75rem;color:var(--mut);margin-top:-6px">${idx===0?'Frente / Imagen principal (clic para ampliar)':'Reverso / Detalle #'+(idx+1)+' (clic para ampliar)'}</div>`).join('');
+  document.getElementById('md').innerHTML=`<h2>${e(p.titulo||p.jugador)}</h2><dl>${F.filter(f=>p[f[0]]!==undefined && p[f[0]]!==null && String(p[f[0]]).trim()!=='').map(f=>`<dt>${f[1]}</dt><dd>${e(p[f[0]])}</dd>`).join('')}</dl>`;
+  document.getElementById('m').style.display='flex';
+  location.hash=id;
+}
+function cerrar(){document.getElementById('m').style.display='none';history.replaceState(null,'',' ')}
+const qInput=document.getElementById('q');
+['input','keyup','change','search','compositionend'].forEach(ev=>qInput.addEventListener(ev,r));
+['fSport','fEra','fYear','fRarity','fBrand','fSort'].forEach(id=>{
+  document.getElementById(id).addEventListener('change',r);
+});
+document.addEventListener('keydown',k=>{
+  if(k.key==='Escape'){
+    if(document.getElementById('lb').style.display==='flex') document.getElementById('lb').style.display='none';
+    else cerrar();
+  }
+});
+r();if(location.hash)ver(location.hash.slice(1));
+</script></body></html>
