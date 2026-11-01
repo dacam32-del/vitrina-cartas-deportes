@@ -10,3 +10,6 @@ Catálogo público e interactivo de cartas coleccionables de deportes (**Básque
 - **Valor estimado de mercado (USD / CLP) y precio de venta sugerido en Chile (CLP)**
 
 🔗 **Ver vitrina online:** [https://dacam32-del.github.io/vitrina-cartas-deportes/](https://dacam32-del.github.io/vitrina-cartas-deportes/)
+
+## 🛒 Tienda web
+**[https://dacam32-del.github.io/vitrina-cartas-deportes/](https://dacam32-del.github.io/vitrina-cartas-deportes/)**
